@@ -48,14 +48,22 @@ OR `start_date` > '2021-07-01'
 -- Listez les projets :
 -- - dont la date de création est postérieure au 01/01/2021 inclus
 -- - ET dont la date de début est antérieure au 01/07/2021 inclus
-
+SELECT *
+FROM project
+WHERE 'start_date' > '2021-01-01'
+AND 'start_date' < '2021-07-01'
 -- Exo 3.7
 -- Listez les students :
 -- - dont l'email contient la chaîne de caractères `.fr` ET la date de création est antérieure au 10/01/2021 inclus
 -- - OU ayant un projet
-
+SELECT *
+FROM 'student'
+WHERE 'email' LIKE '%fr' AND 'created_at' < '2021-01-10' OR 'project' IS NOT NULL 
 -- Exo 3.8
 -- Listez les students :
 -- - dont l'email contient la chaîne de caractères `.fr`ET la date de création est antérieure au 10/01/2021 inclus
 -- - ET n'ayant pas de projet
 
+SELECT *
+FROM 'student'
+WHERE 'email' LIKE '%fr' AND 'created_at' < '2021-01-10' OR 'project' IS NULL
